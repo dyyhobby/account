@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-//require('./bootstrap');
+require('./bootstrap');
 
 //window.Vue = require('vue');
 
@@ -23,23 +23,23 @@ import App from './components/App'
 
 import store from './store'
 
+
+
 //Vue.config.productionTip = true;
 
 //Vue.config.devtools = true;
 
 router.beforeEach((to, from, next) => {
 
-    console.log('路由开始工作');
+    console.log('路由开始工作...');
 
     next();
 
 });
 
-router.afterEach((to, from, next) => {
+router.afterEach(router => {
 
-    console.log('路由工作结束');
-
-    next();
+    console.log('路由工作结束...');
 
 });
 

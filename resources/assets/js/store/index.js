@@ -5,14 +5,27 @@ import Vue from 'vue'
 
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+import * as mutations from './mutations'
+
+import * as actions from './actions'
+
+import  modules from './modules'
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
 
     state:{
 
-        isLoading:false
+        isLoading:false,
+        number:0
 
-    }
+    },
+
+    mutations:mutations,
+
+    actions:actions,
+
+    modules:modules
 
 })

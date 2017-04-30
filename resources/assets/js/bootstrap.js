@@ -19,10 +19,10 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+//window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+//window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -30,11 +30,29 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
+import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
+window.Pusher = require('pusher-js');
+/*
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: 'ff64936262c98cea338a',
+});
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+window.Echo.private('App.User.1').listen('server.created',(e) => {
+
+    console.log(e);
+
+});*/
+
+let pusher = new Pusher('ff64936262c98cea338a', {
+    encrypted: true
+});
+
+let channel = pusher.subscribe('App.User.1');
+
+channel.bind('server.created', function(data) {
+
+    console.log(data);
+
+});
