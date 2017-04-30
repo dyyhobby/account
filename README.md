@@ -1,12 +1,14 @@
 # 账户系统
 使用 laravel 5.4 开发
+
 #安装
-## 1. git clone https://github.com/dyyhobby/account.git
 
-## 2. composer install
+1. git clone https://github.com/dyyhobby/account.git
 
-## 3. npm install/yarn
+2. composer install
 
-## 4. cp .env.example .env
+3. npm install/yarn
 
-## 5. php artisan key:generate
+4. cp .env.example .env
+
+5. php artisan key:generate
