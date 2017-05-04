@@ -1,29 +1,14 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-//window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 import Vue from 'vue'
-
 import router from './router'
-
 import App from './components/App'
-
 import store from './store'
+import N3Components from 'N3-components'
+import Raven from 'raven-js'
+import RavenVue from 'raven-js/plugins/vue'
 
+Raven.config('https://c744072500d1456084f0b7790f8ba504@sentry.io/164257').addPlugin(RavenVue,Vue).install();
 
+N3Components.install(Vue);
 
 //Vue.config.productionTip = true;
 
@@ -52,9 +37,16 @@ new Vue({
     beforeCreate:() => { console.log('应用程序开始创建...') },
     created:() => { console.log('应用程序创建完成...') },
     beforeMount:() => { console.log('应用程序开始挂载...') },
-    mounted:() => { console.log('应用程序挂载完成...') },
+    mounted:() => {
+        console.log('应用程序挂载完成...');
+    },
     beforeUpdate:() => { console.log('应用程序开始更新...') },
     updated:() => { console.log('应用程序更新完成...') },
     beforeDestroy:() => { console.log('应用程序开始销毁...') },
-    destroyed:() => { console.log('应用程序销毁完成...') }
+    destroyed:() => { console.log('应用程序销毁完成...') },
+    errorHandler:(error,vm) => {
+
+        console.log(error,vm);
+
+    }
 });

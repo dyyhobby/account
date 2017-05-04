@@ -11,6 +11,6 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return false;//(int) $user->id === (int) $id;
+Broadcast::channel('user.{id}', function ($user, $id) {
+    return true;//(int) $user->id === (int) $id;
 });

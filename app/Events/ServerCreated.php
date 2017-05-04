@@ -42,9 +42,15 @@ class ServerCreated implements ShouldBroadcast
     {
         // TODO: Implement broadcastOn() method.
 
-        return new Channel('App.User.'.$this->user->id);
+        \Log::info('Event Start');
+
+        return new PrivateChannel('user.'.$this->user->id);
     }
 
+    /**
+     * 设置事件名称
+     * @return string
+     */
     public function broadcastAs()
     {
 

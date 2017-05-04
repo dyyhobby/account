@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Events\ServerCreated;
 use App\User;
 use Auth;
+use App\Jobs\SendReminderEmail;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
         Auth::attempt(['email' => 'dyy@dyy.name','password' => 'secret']);
 
         event(new ServerCreated($user->first()));
+
+        $this->dispatch(new SendReminderEmail($user->first()));
+
+        //throwException(new \Exception('error test',40000));
+
+        echo 'success';
 
         return view('welcome');
 

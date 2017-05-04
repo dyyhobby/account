@@ -1,19 +1,11 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Laravel Vue Single Page Application</div>
-
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <n3-container fluid>
+        example
+    </n3-container>
 </template>
-
+<style lang="sass">
+    @import "../../sass/example.scss";
+</style>
 <script>
     export default {
         name:'example',
@@ -44,6 +36,13 @@
             console.log('路由离开 Example 组件');
 
             next();
+
+        },
+        data:() => { return {
+
+
+        } },
+        methods:{
 
         }
     }
