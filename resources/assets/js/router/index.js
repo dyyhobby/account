@@ -3,22 +3,33 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Example from '../components/Example'
-import User from '../components/User'
+import Dashboard from '../components/Dashboard.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Example',
-            component: Example
-        },
-        {
-            path: '/user',
-            name:'User',
-            component:User
+            name: 'dashboard',
+            component: Dashboard,
+            children:[
+                {
+                    path: 'user',
+                    name: 'user',
+                    component: Dashboard,
+                },
+                {
+                    path: 'application',
+                    name: 'application',
+                    component: Dashboard,
+                },
+                {
+                    path: 'order',
+                    name: 'order',
+                    component: Dashboard,
+                }
+            ]
         }
     ]
 })

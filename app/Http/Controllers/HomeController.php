@@ -11,6 +11,7 @@ use App\Events\ServerCreated;
 use App\User;
 use Auth;
 use App\Jobs\SendReminderEmail;
+use Log;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,10 @@ class HomeController extends Controller
         $this->dispatch(new SendReminderEmail($user->first()));
 
         //throwException(new \Exception('error test',40000));
+
+        $monolog = Log::getMonolog();
+
+        dd($monolog);
 
         echo 'success';
 
