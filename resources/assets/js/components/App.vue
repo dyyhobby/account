@@ -104,7 +104,8 @@
         data:() => {
             return {
                 spanLeft: 3,
-                spanRight: 21
+                spanRight: 21,
+                keywords:[]
             }
         },
         methods:{
@@ -122,6 +123,15 @@
         components:{
             navigation,
             top
+        },
+        beforeUpdate:() => {
+
+            console.log('App Component Update Start');
+        },
+        updated:() => {
+
+            console.log('App Component Updated');
+
         }
     }
 </script>

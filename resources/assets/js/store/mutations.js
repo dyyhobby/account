@@ -11,3 +11,9 @@ export const increment = (state,payload) => {
     state.number++
 
 };
+
+export const keywords = (state,payload) => {
+
+    state.keywords = payload.data;
+
+};

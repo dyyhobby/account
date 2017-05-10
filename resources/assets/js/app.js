@@ -7,7 +7,7 @@ import 'iview/dist/styles/iview.css';
 import Raven from 'raven-js';
 import RavenVue from 'raven-js/plugins/vue';
 
-Raven.config('https://c744072500d1456084f0b7790f8ba504@sentry.io/164257').addPlugin(RavenVue,Vue).install();
+//Raven.config('https://c744072500d1456084f0b7790f8ba504@sentry.io/164257').addPlugin(RavenVue,Vue).install();
 
 Vue.use(iView);
 
@@ -38,6 +38,20 @@ new Vue({
     errorHandler:(error,vm) => {
 
         console.log(error,vm);
+
+    },
+    beforeUpdate:() => {
+
+        console.log('Application Before Update');
+
+        iView.LoadingBar.start()
+
+    },
+    updated:() => {
+
+        console.log('Application Updated');
+
+        iView.LoadingBar.finish();
 
     }
 });

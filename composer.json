@@ -9,6 +9,7 @@
         "aliyuncs/oss-sdk-php": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
         "barryvdh/laravel-ide-helper": "^2.3",
+        "consoletvs/charts": "^4.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "pusher/pusher-php-server": "^2.6",

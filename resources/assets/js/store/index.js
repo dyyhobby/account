@@ -1,9 +1,9 @@
 /**
  * Created by Administrator on 2017/4/27.
  */
-import Vue from 'vue'
+import Vue from 'vue';
 
-import Vuex from 'vuex'
+import Vuex from 'vuex';
 
 import * as mutations from './mutations'
 
@@ -18,7 +18,8 @@ export default new Vuex.Store({
     state:{
 
         isLoading:false,
-        number:0
+        number:0,
+        keywords:[]
 
     },
 
