@@ -1,5 +1,5 @@
 # 账户系统
-使用 laravel 5.4 开发
+一个基于laravel 5.4 和 vue 2.0 的单页应用demo
 
 ## 安装
 1. git clone https://github.com/dyyhobby/laravel-vue.git
