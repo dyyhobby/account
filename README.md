@@ -1,8 +1,8 @@
 # 账户系统
 使用 laravel 5.4 开发
 
-##安装
-1. git clone https://github.com/dyyhobby/account.git
+## 安装
+1. git clone https://github.com/dyyhobby/laravel-vue.git
 
 2. composer install
 
