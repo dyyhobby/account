@@ -6,7 +6,7 @@
 
 2. composer install
 
-3. npm install/yarn
+3. npm install 或者 yarn
 
 4. cp .env.example .env
 
